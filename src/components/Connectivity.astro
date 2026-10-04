@@ -1,0 +1,147 @@
+---
+const commuteCards = [
+  {
+    icon: "school",
+    time: "08 Menit",
+    tag: "Radius 3,2 Km",
+    title: "Kampus UIN Palima",
+    desc: "Akses langsung via jalan kabupaten mulus beraspal, sangat dekat bagi akademisi & mahasiswa.",
+  },
+  {
+    icon: "account_balance",
+    time: "10 Menit",
+    tag: "Pusat ASN & Kota",
+    title: "KP3B & Alun-Alun Serang",
+    desc: "Kawasan Pusat Pemerintahan Provinsi Banten dan pusat aktivitas kota Serang.",
+  },
+  {
+    icon: "local_library",
+    time: "10 Menit",
+    tag: "Lingkungan Kampus",
+    title: "Kampus Untirta Sindangheula",
+    desc: "Terletak di kawasan berkembang pesat, bernilai investasi hunian maupun sewa.",
+  },
+  {
+    icon: "directions_car",
+    time: "15 Menit",
+    tag: "Tol Jakarta-Merak",
+    title: "Tol Serang Timur",
+    desc: "Mobilitas cepat bebas hambatan menuju Jakarta, Cilegon, Tangerang, dan Merak.",
+  },
+  {
+    icon: "local_hospital",
+    time: "15 Menit",
+    tag: "Belanja & Faskes",
+    title: "Mall of Serang & RSUD Banten",
+    desc: "Pusat perbelanjaan modern terlengkap dan rumah sakit rujukan utama provinsi Banten.",
+  },
+  {
+    icon: "local_police",
+    time: "15 Menit",
+    tag: "Institusi Utama",
+    title: "Polda Banten",
+    desc: "Akses cepat ke markas kepolisian daerah Banten dan infrastruktur keamanan publik.",
+  },
+];
+---
+
+<section
+  class="bg-surface-container-lowest py-20 border-b border-outline-variant/40"
+  id="akses-lokasi"
+>
+  <div class="max-w-7xl mx-auto px-4 md:px-8">
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <div
+        class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-primary font-label-sm text-label-sm mb-3 font-semibold"
+      >
+        <span class="material-symbols-outlined text-base text-secondary"
+          >explore</span
+        >
+        KONEKTIVITAS STRATEGIS
+      </div>
+      <h2
+        class="text-headline-lg-mobile md:text-headline-lg font-headline-lg text-primary mb-3"
+      >
+        Akses Strategis di Jantung Pusat Banten
+      </h2>
+      <p class="text-body-md text-on-surface-variant font-body-md">
+        Kp. Kepuh, Sindangheula, Pabuaran — Terkoneksi cepat ke pusat
+        pemerintahan, kampus, jalan tol, dan fasilitas umum.
+      </p>
+    </div>
+
+    <!-- 6 Commute Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      {
+        commuteCards.map((card) => (
+          <div class="bg-surface-container-lowest rounded-xl p-5 border border-outline-variant hover:border-secondary hover:shadow-md transition-all duration-200 flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center shrink-0 text-on-secondary-container">
+              <span class="material-symbols-outlined text-xl">{card.icon}</span>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="px-2 py-0.5 rounded bg-surface-container text-primary text-label-sm font-label-sm font-semibold">
+                  {card.time}
+                </span>
+                <span class="text-body-sm font-body-sm text-outline">
+                  {card.tag}
+                </span>
+              </div>
+              <h3 class="text-title-md font-title-md text-on-surface font-semibold">
+                {card.title}
+              </h3>
+              <p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+                {card.desc}
+              </p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Environment Badge Bar -->
+    <div
+      class="bg-surface-container-low rounded-2xl p-5 border border-outline-variant/60 flex flex-wrap items-center justify-center gap-6 md:gap-10 text-on-surface"
+    >
+      <div class="flex items-center gap-2.5">
+        <span class="material-symbols-outlined text-secondary text-xl"
+          >sports_soccer</span
+        >
+        <span class="text-label-md font-label-md font-medium"
+          >Lapangan Olahraga</span
+        >
+      </div>
+      <div class="hidden sm:block w-1.5 h-1.5 rounded-full bg-outline-variant">
+      </div>
+      <div class="flex items-center gap-2.5">
+        <span class="material-symbols-outlined text-secondary text-xl"
+          >water</span
+        >
+        <span class="text-label-md font-label-md font-medium"
+          >Kawasan Bebas Banjir</span
+        >
+      </div>
+      <div class="hidden sm:block w-1.5 h-1.5 rounded-full bg-outline-variant">
+      </div>
+      <div class="flex items-center gap-2.5">
+        <span class="material-symbols-outlined text-secondary text-xl"
+          >mosque</span
+        >
+        <span class="text-label-md font-label-md font-medium"
+          >Mushola Kawasan</span
+        >
+      </div>
+      <div class="hidden sm:block w-1.5 h-1.5 rounded-full bg-outline-variant">
+      </div>
+      <div class="flex items-center gap-2.5">
+        <span class="material-symbols-outlined text-secondary text-xl"
+          >child_friendly</span
+        >
+        <span class="text-label-md font-label-md font-medium"
+          >Taman Bermain Anak</span
+        >
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,102 @@
+---
+const requirements = [
+  { icon: "person", text: "WNI Usia 21+ / Menikah" },
+  { icon: "cottage", text: "Belum Pernah Memiliki Rumah" },
+  { icon: "work", text: "Karyawan / Wiraswasta / Informal Dibantu" },
+  { icon: "badge", text: "Syarat Dasar: KTP, KK, NPWP" }
+];
+
+const steps = [
+  {
+    num: "01",
+    title: "Konsultasi & Cek KPR",
+    desc: "Pengecekan SLIK OJK gratis tanpa biaya untuk memastikan kelayakan kredit Anda sebelum proses dimulai.",
+    tag: "Waktu: 1 Hari Kerja"
+  },
+  {
+    num: "02",
+    title: "Survei & Pilih Blok",
+    desc: "Kunjungan lokasi perumahan di Sindangheula dan pemilihan posisi kavling strategis di Tahap 3.",
+    tag: "Didampingi Marketing"
+  },
+  {
+    num: "03",
+    title: "Booking & Berkas",
+    desc: "Amankan blok unit cukup Booking DP Rp 250 Ribu dan pengumpulan berkas persyaratan KPR FLPP.",
+    tag: "DP Ringan Rp 250 Rb"
+  },
+  {
+    num: "04",
+    title: "Wawancara & SP3K",
+    desc: "Wawancara verifikasi bank penyalur hingga Surat Persetujuan Kredit (SP3K) terbit resmi.",
+    tag: "Mitra Bank BNI & BSN"
+  },
+  {
+    num: "05",
+    title: "Akad & Serah Kunci",
+    desc: "Penandatanganan akad notaris resmi, garansi All-In Rp 2 Juta bersih, dan serah terima kunci rumah impian Anda.",
+    tag: "Rumah Sah Milik Anda",
+    isFinal: true
+  }
+];
+---
+
+<section class="bg-surface-container-lowest py-20 border-b border-outline-variant/40" id="syarat-kpr">
+  <div class="max-w-7xl mx-auto px-4 md:px-8">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-primary font-label-sm text-label-sm mb-3 font-semibold">
+        <span class="material-symbols-outlined text-base text-secondary">verified_user</span>
+        PANDUAN PROSES MUDAH
+      </div>
+      <h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg text-primary mb-3">
+        Kualifikasi Sederhana & 5 Langkah Serah Terima Kunci
+      </h2>
+      <p class="text-body-md text-on-surface-variant font-body-md">
+        Proses pengajuan KPR didampingi tim marketing dan legal hingga persetujuan akad terbit.
+      </p>
+
+      <!-- 4 Pill Badges for Requirements -->
+      <div class="flex flex-wrap items-center justify-center gap-3 mt-6">
+        {requirements.map((req) => (
+          <span class="px-3.5 py-1.5 rounded-full bg-surface-container-low border border-outline-variant text-label-sm font-label-sm text-on-surface flex items-center gap-1.5 font-medium">
+            <span class="material-symbols-outlined text-secondary text-base">{req.icon}</span>
+            {req.text}
+          </span>
+        ))}
+      </div>
+    </div>
+
+    <!-- 5 Horizontal Progression Steps -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 relative">
+      {steps.map((step) => (
+        <div class={`rounded-xl p-5 border flex flex-col justify-between ${
+          step.isFinal 
+            ? 'bg-secondary-container/30 border-2 border-secondary' 
+            : 'bg-surface-container-low border-outline-variant'
+        }`}>
+          <div>
+            <div class={`w-10 h-10 rounded-full font-headline-sm text-headline-sm flex items-center justify-center mb-4 font-bold ${
+              step.isFinal 
+                ? 'bg-secondary text-on-secondary' 
+                : 'bg-primary-container text-on-primary'
+            }`}>
+              {step.num}
+            </div>
+            <h3 class="text-title-md font-title-md text-primary mb-1 font-bold">{step.title}</h3>
+            <p class="text-body-sm font-body-sm text-on-surface-variant leading-relaxed">{step.desc}</p>
+          </div>
+          <div class={`mt-4 pt-3 border-t text-label-sm font-label-sm font-semibold ${
+            step.isFinal 
+              ? 'border-secondary/30 text-primary font-bold' 
+              : 'border-outline-variant/40 text-secondary'
+          }`}>
+            {step.tag}
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

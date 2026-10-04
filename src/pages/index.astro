@@ -1,11 +1,37 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import Comparison from "../components/Comparison.astro";
+import Specs from "../components/Specs.astro";
+import Connectivity from "../components/Connectivity.astro";
+import Pricing from "../components/Pricing.astro";
+import Developer from "../components/Developer.astro";
+import Steps from "../components/Steps.astro";
+import Testimonials from "../components/Testimonials.astro";
+import Faq from "../components/Faq.astro";
+import CtaBanner from "../components/CtaBanner.astro";
+import Footer from "../components/Footer.astro";
+import StickyCta from "../components/StickyCta.astro";
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  title="TerAs Bahagia - Hunian American Style 30/72 Subsidi FLPP Serang"
+  description="Awal Kebahagiaan Keluarga Anda. Kawasan Mandiri ±10 Hektar di Sindangheula, Serang. Rumah subsidi Tipe 30/72 Fasad Modern American Style, All-In Rp 2 Juta terima kunci, angsuran flat mulai Rp 1.072.300/bulan."
+>
+  <Navbar />
+  <main>
+    <Hero />
+    <Comparison />
+    <Specs />
+    <Connectivity />
+    <Pricing />
+    <Developer />
+    <Steps />
+    <Testimonials />
+    <Faq />
+    <CtaBanner />
+  </main>
+  <Footer />
+  <StickyCta />
 </Layout>

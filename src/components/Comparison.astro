@@ -1,0 +1,129 @@
+---
+const coupleImg =
+  "https://lh3.googleusercontent.com/aida-public/AB6AXuAZ4foGslKyJTmtQR_oMk5r7BgWrDTbRhsEgy39kJsbG7BBJ94gD-Qp_e2jmaJIvvbbfATf-pDODz_Ox3P1wY3Qnco9kojaMOsbkMGkBTAH6lqqy0xNb-n2nR2X7dyHVXqqllX5_OazJlxQc1bpzhiCp5uJwjFi1yjczV_TDo8QuZeLZ64xVxhuBJpqq-VSQZclsFhENUsOSYtIsS7U2V9XshQNPJayd6N6SU6Fdxnt9dGZyuPrEF5L6Q";
+---
+
+<section
+  class="bg-surface-container-lowest pt-28 md:pt-36 pb-20 border-b border-outline-variant/40"
+>
+  <div class="max-w-7xl mx-auto px-4 md:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <!-- Left Column: Copy & Comparison -->
+      <div class="lg:col-span-6 space-y-6">
+        <div></div>
+
+        <h2
+          class="text-headline-lg-mobile md:text-headline-lg font-headline-lg text-primary"
+        >
+          Coba Hitung: Berapa yang Sudah Anda Sumbangkan ke Kontrakan?
+        </h2>
+
+        <p
+          class="text-body-md text-on-surface-variant font-body-md leading-relaxed"
+        >
+          Jika Anda mengontrak Rp 1.000.000 setiap bulan selama <strong
+            class="text-on-surface font-bold">5 tahun</strong
+          >, total <strong class="text-on-surface font-bold"
+            >Rp 60.000.000 menguap</strong
+          > tanpa meninggalkan jejak aset. Dengan besaran dana bulanan yang sama persis,
+          Anda bisa mengangsur rumah sendiri di TerAs Bahagia Serang.
+        </p>
+
+        <!-- Comparison Cards Split -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+          <!-- Card Kontrakan -->
+          <div
+            class="bg-surface-container-low rounded-xl p-5 border border-outline-variant/70 relative"
+          >
+            <div class="flex items-center justify-between mb-3">
+              <span
+                class="text-label-sm font-label-sm text-outline font-bold tracking-wider"
+                >KONTRAKAN BIASA</span
+              >
+              <span class="material-symbols-outlined text-error font-bold"
+                >close</span
+              >
+            </div>
+            <p
+              class="text-headline-sm font-headline-sm text-error font-bold mb-1"
+            >
+              Rp 60.000.000 Hangus
+            </p>
+            <p class="text-body-sm font-body-sm text-on-surface-variant">
+              Uang sewa naik berkala tiap tahun tanpa ada hak kepemilikan aset
+              sedikitpun.
+            </p>
+          </div>
+
+          <!-- Card Teras Bahagia -->
+          <div
+            class="bg-secondary-container/20 rounded-xl p-5 border-2 border-secondary relative shadow-sm"
+          >
+            <div class="flex items-center justify-between mb-3">
+              <span
+                class="text-label-sm font-label-sm text-secondary font-black tracking-wider"
+                >TERAS BAHAGIA</span
+              >
+              <span
+                class="material-symbols-outlined text-secondary"
+                data-weight="fill">check_circle</span
+              >
+            </div>
+            <p
+              class="text-headline-sm font-headline-sm text-primary font-bold mb-1"
+            >
+              Rp 1.072.300/bln Jadi Aset
+            </p>
+            <p class="text-body-sm font-body-sm text-on-surface-variant">
+              Cicilan tetap flat hingga lunas menjadi Sertifikat Hak Milik (SHM
+              & PBG) atas nama Anda.
+            </p>
+          </div>
+        </div>
+
+        <div class="pt-2">
+          <a
+            class="inline-flex items-center gap-2 text-secondary font-title-md text-title-md hover:underline font-semibold"
+            href="#simulasi-cicilan"
+          >
+            <span>Rincian Skema KPR</span>
+            <span class="material-symbols-outlined text-base"
+              >arrow_forward</span
+            >
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Visual Representation -->
+      <div class="lg:col-span-6">
+        <div
+          class="relative rounded-2xl overflow-hidden shadow-lg border border-outline-variant"
+        >
+          <img
+            class="w-full h-[420px] object-cover"
+            alt="Pasangan muda bahagia memegang kunci rumah baru di TerAs Bahagia Serang"
+            src={coupleImg}
+            loading="lazy"
+          />
+          <div
+            class="absolute bottom-4 left-4 right-4 bg-surface-container-lowest/95 backdrop-blur-md rounded-xl p-4 border border-outline-variant shadow-md flex items-center justify-between"
+          >
+            <div>
+              <p class="text-label-sm font-label-sm text-outline">
+                STATUS KEPEMILIKAN RESMI
+              </p>
+              <p class="text-title-md font-title-md text-primary font-bold">
+                Sertifikat Hak Milik (SHM)
+              </p>
+            </div>
+            <span
+              class="px-3 py-1 bg-secondary-container text-on-secondary-container text-label-sm font-label-sm rounded-full font-semibold"
+            >
+              Resmi
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

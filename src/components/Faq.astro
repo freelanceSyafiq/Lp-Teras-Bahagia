@@ -1,0 +1,57 @@
+---
+const faqs = [
+  {
+    q: "Apakah wiraswasta, pedagang, atau pekerja informal tanpa slip gaji bisa lolos KPR FLPP?",
+    a: "Bisa sekali. Tim legal dan marketing TerAs Bahagia memiliki pengalaman mendampingi pembeli informal melalui jalur wirausaha. Dokumen yang diperlukan cukup buku tabungan aktif (rekening koran 3-6 bulan terakhir), catatan omzet harian, dan Surat Keterangan Usaha (SKU) dari kelurahan setempat. Kami mendampingi hingga berkas disetujui oleh bank mitra penyalur."
+  },
+  {
+    q: "Benarkah suku bunga 5% dan cicilan Rp 1.072.300/bulan bersifat flat hingga lunas?",
+    a: "Ya, 100% flat sampai lunas. Ini adalah skema resmi FLPP (Fasilitas Likuiditas Pembiayaan Perumahan) dari Kementerian PUPR dan BP Tapera. Angsuran tidak mengikuti fluktuasi suku bunga komersial bank, sehingga nominal cicilan Anda di tahun ke-1 sama persis dengan nominal di tahun ke-20 tanpa kenaikan sama sekali."
+  },
+  {
+    q: "Berapa total dana awal yang harus disiapkan sampai serah terima kunci?",
+    a: "Komitmen kami adalah transparansi penuh dengan garansi All-In Rp 2.000.000 bersih sampai terima kunci tanpa biaya siluman. Biaya ini sudah mencakup Booking Fee Rp 250.000, Uang Muka (DP), Biaya Pembuatan Akta Notaris, dan Pajak BPHTB. Anda tinggal melanjutkan cicilan bulanan flat setelah akad selesai."
+  },
+  {
+    q: "Bagaimana cara melakukan skrining SLIK OJK (BI Checking) secara gratis?",
+    a: "Cukup kirimkan foto KTP Anda melalui WhatsApp Customer Care resmi kami (+62 815-1725-8271). Tim kami akan memeriksa riwayat pinjaman Anda di sistem perbankan secara aman dan rahasia tanpa dipungut biaya sepeser pun dalam waktu 1x24 jam kerja."
+  }
+];
+---
+
+<section class="bg-surface-container-lowest py-20 border-b border-outline-variant/40">
+  <div class="max-w-4xl mx-auto px-4 md:px-8">
+    
+    <!-- Section Header -->
+    <div class="text-center mb-14">
+      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-primary font-label-sm text-label-sm mb-3 font-semibold">
+        <span class="material-symbols-outlined text-base text-secondary">help</span>
+        KONSULTASI PERTANYAAN
+      </div>
+      <h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg text-primary mb-3">
+        Pertanyaan yang Sering Diajukan
+      </h2>
+      <p class="text-body-md text-on-surface-variant font-body-md">
+        Informasi lengkap seputar program subsidi FLPP, administrasi, dan kemudahan pembayaran.
+      </p>
+    </div>
+
+    <!-- 4 Interactive Accordion Cards -->
+    <div class="space-y-4">
+      {faqs.map((faq) => (
+        <details class="group bg-surface-container-low rounded-xl border border-outline-variant/80 p-5 open:bg-surface-container-lowest open:shadow-sm transition-all [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex justify-between items-center font-title-md text-title-md text-primary cursor-pointer list-none font-bold">
+            <span>{faq.q}</span>
+            <span class="material-symbols-outlined text-secondary transition-transform duration-200 group-open:rotate-45 shrink-0 ml-4">
+              add
+            </span>
+          </summary>
+          <div class="mt-4 pt-3 border-t border-outline-variant/40 text-body-md text-on-surface-variant leading-relaxed">
+            {faq.a}
+          </div>
+        </details>
+      ))}
+    </div>
+
+  </div>
+</section>
