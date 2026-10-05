@@ -1,10 +1,10 @@
 ---
-const coupleImg =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuAZ4foGslKyJTmtQR_oMk5r7BgWrDTbRhsEgy39kJsbG7BBJ94gD-Qp_e2jmaJIvvbbfATf-pDODz_Ox3P1wY3Qnco9kojaMOsbkMGkBTAH6lqqy0xNb-n2nR2X7dyHVXqqllX5_OazJlxQc1bpzhiCp5uJwjFi1yjczV_TDo8QuZeLZ64xVxhuBJpqq-VSQZclsFhENUsOSYtIsS7U2V9XshQNPJayd6N6SU6Fdxnt9dGZyuPrEF5L6Q";
+import { Image } from "astro:assets";
+import facadeImg from "../assets/hero-facade.jpg";
 ---
 
 <section
-  class="bg-surface-container-lowest pt-28 md:pt-36 pb-20 border-b border-outline-variant/40"
+  class="bg-surface-container-lowest pt-14 md:pt-20 lg:pt-36 pb-20 border-b border-outline-variant/40"
 >
   <div class="max-w-7xl mx-auto px-4 md:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -13,13 +13,13 @@ const coupleImg =
         <div></div>
 
         <h2
-          class="text-headline-lg-mobile md:text-headline-lg font-headline-lg text-primary"
+          class="reveal text-headline-lg-mobile md:text-headline-lg font-headline-lg text-primary"
         >
           Coba Hitung: Berapa yang Sudah Anda Sumbangkan ke Kontrakan?
         </h2>
 
         <p
-          class="text-body-md text-on-surface-variant font-body-md leading-relaxed"
+          class="reveal delay-75 text-body-md text-on-surface-variant font-body-md leading-relaxed"
         >
           Jika Anda mengontrak Rp 1.000.000 setiap bulan selama <strong
             class="text-on-surface font-bold">5 tahun</strong
@@ -33,7 +33,7 @@ const coupleImg =
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
           <!-- Card Kontrakan -->
           <div
-            class="bg-surface-container-low rounded-xl p-5 border border-outline-variant/70 relative"
+            class="reveal delay-150 card-interactive bg-surface-container-low rounded-xl p-5 border border-outline-variant/70 relative"
           >
             <div class="flex items-center justify-between mb-3">
               <span
@@ -57,7 +57,7 @@ const coupleImg =
 
           <!-- Card Teras Bahagia -->
           <div
-            class="bg-secondary-container/20 rounded-xl p-5 border-2 border-secondary relative shadow-sm"
+            class="reveal delay-200 card-interactive bg-secondary-container/20 rounded-xl p-5 border-2 border-secondary relative shadow-sm"
           >
             <div class="flex items-center justify-between mb-3">
               <span
@@ -81,7 +81,7 @@ const coupleImg =
           </div>
         </div>
 
-        <div class="pt-2">
+        <div class="reveal delay-200 pt-2">
           <a
             class="inline-flex items-center gap-2 text-secondary font-title-md text-title-md hover:underline font-semibold"
             href="#simulasi-cicilan"
@@ -95,18 +95,32 @@ const coupleImg =
       </div>
 
       <!-- Right Column: Visual Representation -->
-      <div class="lg:col-span-6">
+      <div class="lg:col-span-6 reveal delay-150">
         <div
-          class="relative rounded-2xl overflow-hidden shadow-lg border border-outline-variant"
+          class="card-interactive rounded-2xl overflow-hidden shadow-lg border border-outline-variant bg-surface-container-lowest"
         >
-          <img
-            class="w-full h-[420px] object-cover"
-            alt="Pasangan muda bahagia memegang kunci rumah baru di TerAs Bahagia Serang"
-            src={coupleImg}
-            loading="lazy"
-          />
+          <!-- Image Frame with True Aspect Ratio -->
+          <div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container-low group">
+            <Image
+              class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+              alt="Fasad Modern American Style Tipe 30/72 di TerAs Bahagia Serang"
+              src={facadeImg}
+              width={720}
+              height={450}
+              loading="lazy"
+            />
+            <!-- Discreet Top Badge -->
+            <div
+              class="absolute top-3 left-3 bg-primary/80 backdrop-blur-md text-on-primary text-label-sm font-semibold px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm"
+            >
+              <span class="material-symbols-outlined text-sm text-secondary-fixed">home</span>
+              <span>Tipe 30/72 American Style</span>
+            </div>
+          </div>
+
+          <!-- Bottom Info Bar (Clean, Unobstructed) -->
           <div
-            class="absolute bottom-4 left-4 right-4 bg-surface-container-lowest/95 backdrop-blur-md rounded-xl p-4 border border-outline-variant shadow-md flex items-center justify-between"
+            class="p-4 sm:p-5 bg-surface-container-lowest border-t border-outline-variant/40 flex items-center justify-between"
           >
             <div>
               <p class="text-label-sm font-label-sm text-outline">
@@ -117,8 +131,9 @@ const coupleImg =
               </p>
             </div>
             <span
-              class="px-3 py-1 bg-secondary-container text-on-secondary-container text-label-sm font-label-sm rounded-full font-semibold"
+              class="px-3.5 py-1.5 bg-secondary-container text-on-secondary-container text-label-sm font-label-sm rounded-full font-bold flex items-center gap-1.5 shadow-2xs"
             >
+              <span class="material-symbols-outlined text-base">verified</span>
               Resmi
             </span>
           </div>

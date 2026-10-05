@@ -1,4 +1,7 @@
 ---
+import { Image } from "astro:assets";
+import logoImg from "../assets/logo-teras-bahagia.png";
+
 const waLink =
   "https://wa.me/6281517258271?text=Halo%20Teras%20Bahagia,%20saya%20ingin%20konsultasi%20KPR%20FLPP";
 const igLink = "https://www.instagram.com/terasbahagiaofficial";
@@ -6,6 +9,7 @@ const tiktokLink = "https://tiktok.com/@terasbahagiaofficial";
 ---
 
 <header
+  id="beranda"
   class="top-0 sticky z-50 bg-surface-container-lowest border-b border-outline-variant shadow-sm transition-all"
 >
   <div
@@ -14,14 +18,22 @@ const tiktokLink = "https://tiktok.com/@terasbahagiaofficial";
     <!-- Brand Logo & FLPP Pill -->
     <div class="flex items-center gap-3">
       <a
-        class="text-headline-sm font-headline-sm font-bold text-primary tracking-tight"
-        href="#"
+        class="flex items-center gap-2 group py-1"
+        href="/"
+        aria-label="TerAs Bahagia Beranda"
       >
-        TERAS BAHAGIA
+        <Image
+          src={logoImg}
+          alt="Logo TerAs Bahagia"
+          class="h-14 md:h-16 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
+          loading="lazy"
+          decoding="async"
+        />
       </a>
       <span
         class="hidden sm:inline-flex items-center px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-secondary-container text-on-secondary-container font-semibold"
       >
+        <span class="w-1.5 h-1.5 rounded-full bg-secondary pulse-indicator mr-1.5"></span>
         Subsidi
       </span>
     </div>
@@ -98,7 +110,7 @@ const tiktokLink = "https://tiktok.com/@terasbahagiaofficial";
       </div>
 
       <a
-        class="hidden sm:inline-flex items-center gap-2 bg-primary-container text-on-primary hover:bg-secondary px-5 py-2.5 rounded-lg text-label-md font-label-md transition-all duration-150 active:scale-95 shadow-sm"
+        class="btn-shimmer hidden sm:inline-flex items-center gap-2 bg-primary-container text-on-primary hover:bg-secondary px-5 py-2.5 rounded-lg text-label-md font-label-md transition-all duration-150 active:scale-95 shadow-sm"
         href={waLink}
         rel="noopener noreferrer"
         target="_blank"

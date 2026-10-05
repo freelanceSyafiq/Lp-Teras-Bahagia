@@ -1,14 +1,13 @@
 ---
-const tabraniImg = "https://lh3.googleusercontent.com/aida-public/AB6AXuCxJwTs5Fb2cQi1KXeB5DU3gw2UFPVEiyBQPRvfI5E1oOBpz2c7UCe1zSuser6PmV5XEaAyEqVOC-OOZkfSLuI6IFI9CFZdyIvMEv1l-1by8HG25sBwwk7QnFyOdKLsTewvJ-2nqzyUl0Po6RQxMZAwHIgSySK537Rj_IdoyXbJ97p3GzgQzGgKxjiZ-rkm-cl3LwieFsfUujJyavIQBodEkX3xBTPv_Iw-5cjmz2DozaQpMm-T1nd9MA";
-const tamanAsriImg = "https://lh3.googleusercontent.com/aida-public/AB6AXuDiY190esLS_lxVbgqhDx5Wm7JRea27AkHqOIZiPbKp84MU8Sj9cc5yLP5dQJWQcu9gymdMuTYArf9ZvjEPDPuES45bTsmjwfgjYdjbOStUKAuhhdMyzjiOm432LAmx5MeWg1u1QUniD7vsLoyI9Lxn4rGQACRm69LklIOfSk44K8HaB65O8UEHTCaP9L2QD4c3TLSAfiqDN75coRTFHmwANhqag3jaSRgNSuAAqRtFGhGchFivjg1NdQ";
-const terasBahagiaImg = "https://lh3.googleusercontent.com/aida-public/AB6AXuBcJX-ADtMElPnlOcCLuxARZNckX-vSRWtGv12rWO_ss_7qqjp8zhvA9PMxwpkhQgqlx8870z5g_qQw9qQa_6QQitcLofFN1c-LV_ZdboRbqdDgwt5pefDhT_RwTYoIDIu06vKYz23khKcnLDm4jdPDVfIvYAJAmDlu6swe0LTKswCAQXyY_YNrPsTtgoB9Hc5vgDxhE7uRViGjnX-hY1aqO10rjmo2fHTBu_7LYS9wqs7CIJwfp66cmw";
+import { Image } from "astro:assets";
+import tabraniImg from "../assets/direktur-tabrani.jpg";
 ---
 
 <section class="bg-surface-container-lowest py-20 border-b border-outline-variant/40" id="pengembang">
   <div class="max-w-7xl mx-auto px-4 md:px-8">
     
     <!-- Section Header -->
-    <div class="text-center max-w-3xl mx-auto mb-14">
+    <div class="reveal text-center max-w-3xl mx-auto mb-14">
       <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-primary font-label-sm text-label-sm mb-3 font-semibold">
         <span class="material-symbols-outlined text-base text-secondary">military_tech</span>
         REKAM JEJAK & INTEGRITAS PENGEMBANG
@@ -22,16 +21,16 @@ const terasBahagiaImg = "https://lh3.googleusercontent.com/aida-public/AB6AXuBcJ
     </div>
 
     <!-- Director Profile Card -->
-    <div class="bg-surface-container-low rounded-3xl p-6 md:p-10 border border-outline-variant shadow-md mb-14 overflow-hidden">
+    <div class="reveal delay-100 card-interactive bg-surface-container-low rounded-3xl p-6 md:p-10 border border-outline-variant shadow-md mb-14 overflow-hidden">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
         <!-- Image Column -->
         <div class="lg:col-span-5 relative">
-          <div class="relative rounded-2xl overflow-hidden shadow-lg border border-outline-variant bg-surface-container">
-            <img
+          <div class="relative rounded-2xl overflow-hidden shadow-lg border border-outline-variant bg-white">
+            <Image
               src={tabraniImg}
               alt="H. Tabrani - Inisiator & Direktur Utama Pengembang TerAs Bahagia"
-              class="w-full h-[380px] md:h-[430px] object-cover object-center"
+              class="w-full h-[360px] sm:h-[400px] md:h-[440px] object-cover object-top"
               loading="lazy"
             />
             <div class="absolute bottom-4 left-4 right-4 bg-surface-container-lowest/95 backdrop-blur-md rounded-xl p-3.5 border border-outline-variant/60 shadow-sm">
@@ -97,86 +96,74 @@ const terasBahagiaImg = "https://lh3.googleusercontent.com/aida-public/AB6AXuBcJ
 
     <!-- Portfolio Comparison -->
     <div class="space-y-6">
-      <div class="text-center max-w-2xl mx-auto">
+      <div class="reveal text-center max-w-2xl mx-auto">
         <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm mb-2 font-semibold">
-          <span class="material-symbols-outlined text-base">photo_library</span>
+          <span class="material-symbols-outlined text-base">verified</span>
           BUKTI REALISASI NYATA
         </div>
         <h3 class="text-headline-md font-headline-md text-primary font-bold">
-          Portofolio Proyek & Progres Pembangunan Lapangan
+          Portofolio Proyek & Rekam Jejak Lapangan
         </h3>
         <p class="text-body-sm text-on-surface-variant">
-          Komparasi visual antara kawasan yang telah sukses selesai dihuni dan proyek aktif yang sedang berjalan.
+          Bukti rekam jejak nyata antara kawasan yang telah sukses selesai dihuni dan proyek aktif yang sedang berjalan.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         
         <!-- Project 1: Taman Asri Pandeglang -->
-        <div class="bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
-          <div class="relative">
-            <img
-              src={tamanAsriImg}
-              alt="Perumahan Taman Asri Pandeglang - 100% Selesai Dibangun dan Berpenghuni"
-              class="w-full h-56 object-cover"
-              loading="lazy"
-            />
-            <div class="absolute top-3 left-3 bg-secondary text-on-secondary px-3 py-1 rounded-full text-label-sm font-bold shadow-md flex items-center gap-1.5">
-              <span class="material-symbols-outlined text-base" data-weight="fill">check_circle</span>
-              100% SELESAI DIBANGUN & BERPENGHUNI
+        <div class="reveal delay-100 card-interactive bg-surface-container-lowest rounded-2xl p-6 md:p-8 border border-outline-variant shadow-sm flex flex-col justify-between gap-6">
+          <div class="space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="inline-flex items-center gap-1.5 bg-secondary text-on-secondary px-3 py-1 rounded-full text-label-sm font-bold shadow-xs">
+                <span class="material-symbols-outlined text-base" data-weight="fill">check_circle</span>
+                100% SELESAI DIBANGUN & BERPENGHUNI
+              </span>
+              <span class="text-label-sm font-semibold text-secondary">Pandeglang, Banten</span>
             </div>
-          </div>
-          <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
+
             <div>
-              <div class="flex items-center justify-between mb-1">
-                <h4 class="text-headline-sm font-headline-sm text-primary font-bold">Taman Asri Pandeglang</h4>
-                <span class="text-label-sm font-medium text-secondary">Pandeglang, Banten</span>
-              </div>
-              <p class="text-body-sm text-on-surface-variant leading-relaxed">
+              <h4 class="text-headline-sm font-headline-sm text-primary font-bold mb-2">Taman Asri Pandeglang</h4>
+              <p class="text-body-md text-on-surface-variant leading-relaxed">
                 Bukti nyata kawasan pemukiman mandiri yang asri, hijau, tertata rapi, dan telah dihuni puluhan keluarga secara penuh di Pandeglang oleh pengembang H. Tabrani.
               </p>
             </div>
-            <div class="pt-4 border-t border-outline-variant/40 flex items-center justify-between text-body-sm">
-              <span class="text-on-surface-variant">Status Proyek:</span>
-              <span class="font-semibold text-secondary flex items-center gap-1">
-                <span class="material-symbols-outlined text-base">check</span>
-                100% Serah Terima Tuntas
-              </span>
-            </div>
+          </div>
+
+          <div class="pt-4 border-t border-outline-variant/40 flex items-center justify-between text-body-sm">
+            <span class="text-on-surface-variant font-medium">Status Proyek:</span>
+            <span class="font-bold text-secondary flex items-center gap-1">
+              <span class="material-symbols-outlined text-base">check</span>
+              100% Serah Terima Tuntas
+            </span>
           </div>
         </div>
 
         <!-- Project 2: TerAs Bahagia Sindangheula -->
-        <div class="bg-surface-container-lowest rounded-2xl overflow-hidden border-2 border-secondary shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
-          <div class="relative">
-            <img
-              src={terasBahagiaImg}
-              alt="TerAs Bahagia Sindangheula Serang - Kawasan Mandiri ±10 Hektar Tahap 3"
-              class="w-full h-56 object-cover"
-              loading="lazy"
-            />
-            <div class="absolute top-3 left-3 bg-amber-500 text-surface-container-lowest px-3 py-1 rounded-full text-label-sm font-bold shadow-md flex items-center gap-1.5">
-              <span class="material-symbols-outlined text-base">autorenew</span>
-              KAWASAN MANDIRI ±10 HA (80+ SOLD, TAHAP 3 DIBUKA)
+        <div class="reveal delay-200 card-interactive bg-surface-container-lowest rounded-2xl p-6 md:p-8 border-2 border-secondary shadow-sm flex flex-col justify-between gap-6">
+          <div class="space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="inline-flex items-center gap-1.5 bg-amber-500 text-surface-container-lowest px-3 py-1 rounded-full text-label-sm font-bold shadow-xs">
+                <span class="material-symbols-outlined text-base">autorenew</span>
+                KAWASAN MANDIRI ±10 HA (80+ SOLD, TAHAP 3 DIBUKA)
+              </span>
+              <span class="text-label-sm font-semibold text-secondary">Serang, Banten</span>
             </div>
-          </div>
-          <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
+
             <div>
-              <div class="flex items-center justify-between mb-1">
-                <h4 class="text-headline-sm font-headline-sm text-primary font-bold">TerAs Bahagia Sindangheula</h4>
-                <span class="text-label-sm font-medium text-secondary">Serang, Banten</span>
-              </div>
-              <p class="text-body-sm text-on-surface-variant leading-relaxed">
+              <h4 class="text-headline-sm font-headline-sm text-primary font-bold mb-2">TerAs Bahagia Sindangheula</h4>
+              <p class="text-body-md text-on-surface-variant leading-relaxed">
                 Kawasan mandiri ±10 Hektar di Kp. Kepuh Sindangheula. Rangka baja ringan presisi, saluran drainase U-Ditch rapi, dan jalan lingkungan lebar. Tahap 1 & 2 telah terjual 80+ unit, kini Tahap 3 resmi dibuka.
               </p>
             </div>
-            <div class="pt-4 border-t border-outline-variant/40 flex items-center justify-between text-body-sm">
-              <span class="text-on-surface-variant">Status Proyek:</span>
-              <span class="font-semibold text-secondary flex items-center gap-1">
-                <span class="material-symbols-outlined text-base">construction</span>
-                On Progress & Resmi Buka Tahap 3
-              </span>
-            </div>
+          </div>
+
+          <div class="pt-4 border-t border-outline-variant/40 flex items-center justify-between text-body-sm">
+            <span class="text-on-surface-variant font-medium">Status Proyek:</span>
+            <span class="font-bold text-secondary flex items-center gap-1">
+              <span class="material-symbols-outlined text-base">construction</span>
+              On Progress & Resmi Buka Tahap 3
+            </span>
           </div>
         </div>
 

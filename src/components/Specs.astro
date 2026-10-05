@@ -1,12 +1,13 @@
 ---
-const floorplanImg = "https://lh3.googleusercontent.com/aida-public/AB6AXuBEvRICXXX1idDV7kGsDicGM9UoIqiQWMO21zdlWVEVt3XFvoV02YPVIy-y2lFRB8lsic1X2rQOmPK6bpb0jIAPhLtnNh1wKHX7uKlUwe0mez4MIoAi8BhqeJkx55-f-pTDBqW9Ilc91dtYfzed4i1a8y63iiCAv5CfGYH6vaYflsbXe-EACh63SqnafbADO21-gMULDsB0IrDeNrDMkXhFUtiRm4Y-ks2eAOqnL2uLIw3cFPMfjmmN8w";
+import { Image } from "astro:assets";
+import floorplanImg from "../assets/denah-tipe-30-72.jpg";
 ---
 
 <section class="bg-surface-container-low py-20 border-b border-outline-variant/40" id="tipe-unit">
   <div class="max-w-7xl mx-auto px-4 md:px-8">
     
     <!-- Section Header -->
-    <div class="text-center max-w-3xl mx-auto mb-14">
+    <div class="reveal text-center max-w-3xl mx-auto mb-14">
       <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm mb-3 font-semibold">
         <span class="material-symbols-outlined text-base">architecture</span>
         SPESIFIKASI UNIT
@@ -23,7 +24,7 @@ const floorplanImg = "https://lh3.googleusercontent.com/aida-public/AB6AXuBEvRIC
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       
       <!-- Card 1: Layout & Floorplan -->
-      <div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+      <div class="reveal delay-100 card-interactive bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant shadow-sm flex flex-col justify-between">
         <div>
           <div class="flex items-center justify-between mb-4">
             <span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-label-sm font-label-sm rounded-full font-semibold">
@@ -34,14 +35,25 @@ const floorplanImg = "https://lh3.googleusercontent.com/aida-public/AB6AXuBEvRIC
           <h3 class="text-headline-sm font-headline-sm text-primary mb-2">Pemanfaatan Ruang Efisien</h3>
           <p class="text-body-sm font-body-sm text-on-surface-variant mb-6">Tata letak pencahayaan alami optimal dengan sirkulasi udara silang di kedua sisi.</p>
           
-          <!-- Floorplan Visual Representation -->
-          <div class="relative bg-surface-container-low rounded-xl p-4 border border-outline-variant/60 mb-6">
-            <img
-              class="w-full h-44 object-contain rounded-lg"
-              alt="Denah arsitektur Tipe 30/72 TerAs Bahagia 2 Kamar Tidur"
-              src={floorplanImg}
-              loading="lazy"
-            />
+          <!-- Floorplan Visual Representation with Click to Zoom -->
+          <div class="relative bg-white rounded-xl p-3 border border-outline-variant/60 mb-6 group overflow-hidden shadow-xs">
+            <button
+              type="button"
+              id="open-denah-modal"
+              class="w-full focus:outline-hidden text-left cursor-pointer"
+              aria-label="Buka denah ukuran penuh"
+            >
+              <Image
+                class="w-full h-64 sm:h-72 lg:h-80 object-contain rounded-lg mx-auto transition-transform duration-300 group-hover:scale-[1.02]"
+                alt="Denah arsitektur Tipe 30/72 TerAs Bahagia 2 Kamar Tidur"
+                src={floorplanImg}
+                loading="lazy"
+              />
+              <span class="absolute bottom-3 right-3 bg-primary/90 text-on-primary text-xs font-semibold px-2.5 py-1 rounded-md flex items-center gap-1 shadow-sm group-hover:bg-secondary transition-colors">
+                <span class="material-symbols-outlined text-sm">zoom_in</span>
+                <span>Klik untuk Memperbesar</span>
+              </span>
+            </button>
           </div>
 
           <!-- Spec Badges -->
@@ -68,7 +80,7 @@ const floorplanImg = "https://lh3.googleusercontent.com/aida-public/AB6AXuBEvRIC
       </div>
 
       <!-- Card 2: Material Specifications -->
-      <div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+      <div class="reveal delay-200 card-interactive bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant shadow-sm flex flex-col justify-between">
         <div>
           <div class="flex items-center justify-between mb-4">
             <span class="px-3 py-1 bg-surface-container text-primary text-label-sm font-label-sm rounded-full font-semibold">
@@ -120,7 +132,7 @@ const floorplanImg = "https://lh3.googleusercontent.com/aida-public/AB6AXuBEvRIC
       </div>
 
       <!-- Card 3: Utilitas, Bonus Siap Huni & Legalitas -->
-      <div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+      <div class="reveal delay-300 card-interactive bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant shadow-sm flex flex-col justify-between">
         <div>
           <div class="flex items-center justify-between mb-4">
             <span class="px-3 py-1 bg-surface-container text-primary text-label-sm font-label-sm rounded-full font-semibold">
@@ -174,4 +186,52 @@ const floorplanImg = "https://lh3.googleusercontent.com/aida-public/AB6AXuBEvRIC
     </div>
 
   </div>
+
+  <!-- Floorplan Lightbox Modal -->
+  <dialog
+    id="denah-modal"
+    class="backdrop:bg-black/80 backdrop:backdrop-blur-xs p-0 bg-transparent rounded-2xl max-w-2xl w-[92vw] m-auto focus:outline-hidden"
+  >
+    <div class="bg-surface-container-lowest rounded-2xl p-4 sm:p-6 border border-outline-variant shadow-2xl relative">
+      <div class="flex items-center justify-between pb-3 border-b border-outline-variant/40 mb-3">
+        <div>
+          <h3 class="text-title-md font-bold text-primary">Denah Arsitektur Tipe 30/72 m²</h3>
+          <p class="text-body-sm text-on-surface-variant">TerAs Bahagia - Kavling 6 x 12 Meter</p>
+        </div>
+        <button
+          id="close-denah-modal"
+          type="button"
+          class="w-9 h-9 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface transition-colors cursor-pointer"
+          aria-label="Tutup modal denah"
+        >
+          <span class="material-symbols-outlined text-lg">close</span>
+        </button>
+      </div>
+      <div class="max-h-[75vh] overflow-auto flex justify-center bg-white rounded-xl p-2 sm:p-4 border border-outline-variant/40">
+        <Image
+          src={floorplanImg}
+          alt="Denah Ukuran Penuh Tipe 30/72 TerAs Bahagia"
+          class="max-w-full h-auto object-contain"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </div>
+  </dialog>
 </section>
+
+<script>
+  const modal = document.getElementById("denah-modal") as HTMLDialogElement | null;
+  const openBtn = document.getElementById("open-denah-modal");
+  const closeBtn = document.getElementById("close-denah-modal");
+
+  if (modal && openBtn) {
+    openBtn.addEventListener("click", () => modal.showModal());
+  }
+  if (modal && closeBtn) {
+    closeBtn.addEventListener("click", () => modal.close());
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) modal.close();
+    });
+  }
+</script>

@@ -118,13 +118,13 @@
   font-size: 48px;
   line-height: 56px;
   letter-spacing: -0.02em;
-  font-weight: 700;
+  font-weight: 800;
 }
 .text-display-hero-mobile {
   font-size: 32px;
   line-height: 40px;
   letter-spacing: -0.01em;
-  font-weight: 700;
+  font-weight: 800;
 }
 .text-headline-lg {
   font-size: 36px;
@@ -185,4 +185,105 @@
   line-height: 28px;
   letter-spacing: -0.01em;
   font-weight: 700;
+}
+
+/* Tasteful Entrance & Micro-Interaction Animations */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Smooth Stagger Delays */
+.delay-75 { transition-delay: 75ms; }
+.delay-150 { transition-delay: 150ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+
+/* Subtle Card Elevation Hover */
+.card-interactive {
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.28s ease;
+}
+.card-interactive:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px -6px rgba(0, 56, 32, 0.1), 0 4px 8px -2px rgba(0, 56, 32, 0.05);
+}
+
+/* Button Micro-Interaction: Shimmer Sheen */
+@keyframes subtle-sheen {
+  0% { transform: translateX(-120%); }
+  100% { transform: translateX(220%); }
+}
+
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
+  transform: translateX(-120%);
+  pointer-events: none;
+}
+.btn-shimmer:hover::after {
+  animation: subtle-sheen 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Floating Accent Indicator */
+@keyframes gentle-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.75; transform: scale(1.15); }
+}
+
+.pulse-indicator {
+  animation: gentle-pulse 2.5s ease-in-out infinite;
+}
+
+/* Custom Scrollbar & Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-surface-container-low);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-fixed-dim);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
+}
+
+/* Accessibility: respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal,
+  .js .reveal.is-visible {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .card-interactive,
+  .btn-shimmer::after,
+  .pulse-indicator {
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }
