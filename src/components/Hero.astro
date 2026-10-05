@@ -7,16 +7,19 @@ const waCekUnit =
 const heroBg = "/images/hero-cluster.jpg";
 ---
 
-<section class="relative bg-primary pb-14 md:pb-20 lg:pb-36 overflow-visible">
+<section
+  class="relative bg-primary pb-14 md:pb-20 lg:pb-36 overflow-visible"
+  style="background-color: #003820; color-scheme: only light;"
+>
   <!-- Background Image with Gradient Overlay -->
-  <div class="absolute inset-0 z-0">
+  <div class="absolute inset-0 z-0 pointer-events-none">
     <div
-      class="w-full h-full bg-cover bg-center md:bg-[center_right_20%]"
-      style={`background-image: url('${heroBg}')`}
+      class="w-full h-full bg-cover bg-center md:hero-bg-pos"
+      style={`background-image: url('${heroBg}'); background-color: #003820;`}
     >
     </div>
     <div
-      class="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/80 to-primary/95 md:bg-gradient-to-r md:from-primary/95 md:via-primary/80 md:to-primary/30 lg:to-transparent"
+      class="absolute inset-0 bg-linear-to-b from-primary/90 via-primary/80 to-primary/95 md:bg-linear-to-r md:from-primary/95 md:via-primary/80 md:to-primary/30 lg:to-transparent"
     >
     </div>
   </div>
@@ -38,7 +41,7 @@ const heroBg = "/images/hero-cluster.jpg";
       <h1
         class="reveal delay-75 text-display-hero-mobile md:text-display-hero font-display-hero text-on-primary font-extrabold mb-5"
       >
-        Berhenti Bayar Kontrakan. Miliki Rumah American Style di Serang.
+        Berhenti Bayar Kontrakan. Miliki Rumah Subsidi Setara Komersil di Serang
       </h1>
 
       <!-- Subheadline with Real Data -->

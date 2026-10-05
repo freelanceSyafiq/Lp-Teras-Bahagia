@@ -40,11 +40,11 @@ import floorplanImg from "../assets/denah-tipe-30-72.jpg";
             <button
               type="button"
               id="open-denah-modal"
-              class="w-full focus:outline-hidden text-left cursor-pointer"
+              class="w-full focus:outline-none text-left cursor-pointer"
               aria-label="Buka denah ukuran penuh"
             >
               <Image
-                class="w-full h-64 sm:h-72 lg:h-80 object-contain rounded-lg mx-auto transition-transform duration-300 group-hover:scale-[1.02]"
+                class="w-full h-64 sm:h-72 lg:h-80 object-contain rounded-lg mx-auto transition-transform duration-300 group-hover:scale-102"
                 alt="Denah arsitektur Tipe 30/72 TerAs Bahagia 2 Kamar Tidur"
                 src={floorplanImg}
                 loading="lazy"
@@ -190,7 +190,7 @@ import floorplanImg from "../assets/denah-tipe-30-72.jpg";
   <!-- Floorplan Lightbox Modal -->
   <dialog
     id="denah-modal"
-    class="backdrop:bg-black/80 backdrop:backdrop-blur-xs p-0 bg-transparent rounded-2xl max-w-2xl w-[92vw] m-auto focus:outline-hidden"
+    class="p-0 bg-transparent rounded-2xl max-w-2xl w-11/12 m-auto focus:outline-none"
   >
     <div class="bg-surface-container-lowest rounded-2xl p-4 sm:p-6 border border-outline-variant shadow-2xl relative">
       <div class="flex items-center justify-between pb-3 border-b border-outline-variant/40 mb-3">
@@ -207,7 +207,7 @@ import floorplanImg from "../assets/denah-tipe-30-72.jpg";
           <span class="material-symbols-outlined text-lg">close</span>
         </button>
       </div>
-      <div class="max-h-[75vh] overflow-auto flex justify-center bg-white rounded-xl p-2 sm:p-4 border border-outline-variant/40">
+      <div style="max-height: 75vh;" class="overflow-auto flex justify-center bg-white rounded-xl p-2 sm:p-4 border border-outline-variant/40">
         <Image
           src={floorplanImg}
           alt="Denah Ukuran Penuh Tipe 30/72 TerAs Bahagia"

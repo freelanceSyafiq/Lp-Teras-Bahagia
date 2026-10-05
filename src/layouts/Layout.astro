@@ -17,6 +17,8 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="only light" />
+    <meta name="supported-color-schemes" content="light" />
     <link rel="icon" type="image/png" href="/logo-teras-bahagia.png" />
     <meta name="generator" content={Astro.generator} />
 
@@ -87,7 +89,7 @@ const {
     <!-- Scroll Progress Indicator Bar -->
     <div
       id="scroll-progress-bar"
-      class="fixed top-0 left-0 h-[3.5px] bg-gradient-to-r from-secondary via-secondary-container to-secondary-fixed z-[100] transition-all duration-75 pointer-events-none"
+      class="fixed top-0 left-0 h-1 bg-linear-to-r from-secondary via-secondary-container to-secondary-fixed z-100 transition-all duration-75 pointer-events-none"
       style="width: 0%"
       aria-hidden="true"
     ></div>

@@ -40,7 +40,7 @@ const faqs = [
     <div class="space-y-4">
       {faqs.map((faq, idx) => (
         <details
-          class="reveal card-interactive group bg-surface-container-low rounded-xl border border-outline-variant/80 p-5 open:bg-surface-container-lowest open:shadow-sm transition-all [&_summary::-webkit-details-marker]:hidden"
+          class="reveal card-interactive group bg-surface-container-low rounded-xl border border-outline-variant/80 p-5 open:bg-surface-container-lowest open:shadow-sm transition-all"
           style={`transition-delay: ${idx * 60}ms`}
         >
           <summary class="flex justify-between items-center font-title-md text-title-md text-primary cursor-pointer list-none font-bold">

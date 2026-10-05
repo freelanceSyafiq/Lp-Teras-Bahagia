@@ -1,19 +1,25 @@
 ---
+import { Image } from "astro:assets";
+import gallery1 from "../assets/gallery-1.jpg";
+import gallery2 from "../assets/gallery-2.jpg";
+import gallery3 from "../assets/gallery-3.jpg";
+import gallery4 from "../assets/gallery-4.jpg";
+
 const gallery = [
   {
-    src: "/images/gallery-1.jpg",
+    image: gallery1,
     alt: "Penyerahan sertifikat dan kunci akad notaris rumah TerAs Bahagia"
   },
   {
-    src: "/images/gallery-2.jpg",
+    image: gallery2,
     alt: "Deretan rumah Modern American Style di kawasan mandiri TerAs Bahagia Serang"
   },
   {
-    src: "/images/gallery-3.jpg",
+    image: gallery3,
     alt: "Halaman belakang luas rumah Tipe 30/72 dengan privasi tembok tertutup"
   },
   {
-    src: "/images/gallery-4.jpg",
+    image: gallery4,
     alt: "Konsultasi denah dan pemilihan kavling di galeri pemasaran TerAs Bahagia"
   }
 ];
@@ -119,13 +125,13 @@ const gallery = [
     <!-- 4-item Photo Gallery Row -->
     <div class="reveal delay-200 grid grid-cols-2 md:grid-cols-4 gap-4">
       {gallery.map((item) => (
-        <div class="rounded-xl overflow-hidden border border-outline-variant shadow-sm card-interactive">
-          <img
+        <div class="rounded-xl overflow-hidden border border-outline-variant shadow-sm card-interactive bg-surface-container-low">
+          <Image
             class="w-full h-36 object-cover hover:scale-105 transition-transform duration-300"
             alt={item.alt}
-            src={item.src}
-            width="400"
-            height="250"
+            src={item.image}
+            width={400}
+            height={250}
             loading="lazy"
             decoding="async"
           />
