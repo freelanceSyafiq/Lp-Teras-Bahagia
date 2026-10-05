@@ -1,21 +1,19 @@
 ---
-import { Image } from "astro:assets";
-
 const gallery = [
   {
-    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCS74E3SdVtTEWs46_N5xCWWHlit8sdJ-LpaNXIjtAwE0BvESCrKy105imS-86favYkFEjPwinaNa5pUAmWBOVU47ZayYUREFg7EMXn-yHcqTApxJ4tpuifzENOECyQLeoRUDO-WVVfDU4CYU3yMg9yAzdmezUyQhZUec9z2exZVolGwdaS1V5cf03JJETT8pckvr0h3zpV6a1d9dsxOgKomyCafv_EZcqO3-Ua8fU2p4P3-I24sWeO4A",
+    src: "/images/gallery-1.jpg",
     alt: "Penyerahan sertifikat dan kunci akad notaris rumah TerAs Bahagia"
   },
   {
-    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCS8R07olAm9BWDwgbPlLxSF9w6HqEbNY1WXDZCDMPD0EAj3l7fyDiuNdz8RlQZj3nDEifHyRt29kP183tlR8tHdB5VliDR5Zt61KfvfNou9fr7jcmjEJM390msXSgY4RmKFGwVwUQHDp_nY4Uhj99r7KdOZKMgXtiNoMlirGzVTlWIF8wtZHNhWQ7Rl2fGxK29xy5UjD8zvgTxK7D6KiwvpSTAmz4L6ycF0k25rSj7SXRXETPwezwB2g",
+    src: "/images/gallery-2.jpg",
     alt: "Deretan rumah Modern American Style di kawasan mandiri TerAs Bahagia Serang"
   },
   {
-    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuDQM2M4oNavD7LfYcdy-biTcQxIgszLqSHtqTn4NXCv-sqMcMYHfbmCYev-OJImMfT7rj4FqlWbKFgX2IiyVYdlZIhZJ2LuVpwq1wmD6BOGTJAzDmCKAXc1zPQxYsoDi1YawSjfjemD92DVHVmZoUhl7j6aBZpZX4ZubIzyOhIxUMLnB2GuxQtROUIemqha9BmMr7Z8_3kNwRTnzsLk9T9kvY3xL9YfV8gQpQjF3saeYPINPFeDR8zpQQ",
+    src: "/images/gallery-3.jpg",
     alt: "Halaman belakang luas rumah Tipe 30/72 dengan privasi tembok tertutup"
   },
   {
-    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuDsFDba-WtZWf3BekxiKZ8ZPBR84TxQo7XXGjHfDVretp-BiOsm4cgHlV2fCC5_V3iGM6yk84jAdmdhXLr71GS897ltt8doRSdqpFLzJOwJaJdBkHTiYfN_KEYeaQLsw6NVVEAgyqMpos4FId7MgTlGhaPw936rOCnAZgUEaafaiwnNTL5UVOiKkSvhncB6Z1-ottIPyj9gYgBD7dLsfvXzoQ3pvb3Ykqx-n9rOSa4YRP7ntbXL577HYA",
+    src: "/images/gallery-4.jpg",
     alt: "Konsultasi denah dan pemilihan kavling di galeri pemasaran TerAs Bahagia"
   }
 ];
@@ -122,13 +120,14 @@ const gallery = [
     <div class="reveal delay-200 grid grid-cols-2 md:grid-cols-4 gap-4">
       {gallery.map((item) => (
         <div class="rounded-xl overflow-hidden border border-outline-variant shadow-sm card-interactive">
-          <Image
+          <img
             class="w-full h-36 object-cover hover:scale-105 transition-transform duration-300"
             alt={item.alt}
             src={item.src}
-            width={400}
-            height={250}
+            width="400"
+            height="250"
             loading="lazy"
+            decoding="async"
           />
         </div>
       ))}
