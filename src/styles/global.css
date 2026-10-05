@@ -122,10 +122,24 @@
 
 /* Stitch Exact Typography Classes */
 .text-display-hero {
-  font-size: 48px;
-  line-height: 56px;
-  letter-spacing: -0.02em;
+  font-size: 54px;
+  line-height: 62px;
+  letter-spacing: -0.025em;
   font-weight: 800;
+}
+
+@media (min-width: 1024px) {
+  .text-display-hero {
+    font-size: 62px;
+    line-height: 70px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .text-display-hero {
+    font-size: 66px;
+    line-height: 74px;
+  }
 }
 
 .text-display-hero-mobile {
